@@ -223,6 +223,10 @@ export default function HolidayNutritionPlanner() {
         }
 
         /* Mobile Responsive Styles */
+        * {
+          box-sizing: border-box;
+        }
+
         @media (max-width: 768px) {
           body {
             overflow-x: hidden;
@@ -234,16 +238,38 @@ export default function HolidayNutritionPlanner() {
           
           h1 {
             font-size: 36px !important;
+            word-wrap: break-word;
           }
           
           h2 {
             font-size: 24px !important;
+            word-wrap: break-word;
+          }
+
+          h3 {
+            font-size: 18px !important;
+          }
+
+          /* Force all text to wrap */
+          p, div, span {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-word;
+          }
+
+          /* Strategy cards on mobile stack */
+          [style*="gridTemplateColumns"] {
+            grid-template-columns: 1fr !important;
           }
         }
 
         @media (max-width: 480px) {
           h1 {
-            font-size: 32px !important;
+            font-size: 28px !important;
+          }
+
+          h2 {
+            font-size: 22px !important;
           }
         }
       `}</style>
@@ -1199,48 +1225,51 @@ export default function HolidayNutritionPlanner() {
               {/* Key Strategies */}
               <div style={{
                 background: 'white',
-                padding: '32px',
+                padding: '20px',
                 borderRadius: '12px',
                 marginBottom: '36px',
-                border: `2px solid ${colors.primary}`
+                border: `2px solid ${colors.primary}`,
+                width: '100%',
+                boxSizing: 'border-box'
               }}>
                 <h2 style={{
-                  fontSize: '28px',
+                  fontSize: '24px',
                   color: colors.primary,
                   marginBottom: '20px',
-                  letterSpacing: '1px'
+                  letterSpacing: '1px',
+                  wordWrap: 'break-word'
                 }}>
                   YOUR DECEMBER STRATEGY
                 </h2>
                 <div style={{
                   display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
                   gap: '16px',
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: '15px',
+                  fontSize: '14px',
                   color: 'black',
                   lineHeight: '1.6'
                 }}>
-                  <div>
-                    <div style={{ color: colors.primary, fontWeight: 'bold', marginBottom: '8px', fontSize: '16px' }}>
+                  <div style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
+                    <div style={{ color: colors.primary, fontWeight: 'bold', marginBottom: '8px', fontSize: '15px' }}>
                       PROTEIN PRIORITY
                     </div>
                     Hit {results.training.protein}g daily. {formData.gender === 'female' ? '2.0' : '2.2'}g/kg for {formData.gender === 'male' ? 'male' : 'female'} athletes. Essential for muscle preservation.
                   </div>
-                  <div>
-                    <div style={{ color: colors.primary, fontWeight: 'bold', marginBottom: '8px', fontSize: '16px' }}>
+                  <div style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
+                    <div style={{ color: colors.primary, fontWeight: 'bold', marginBottom: '8px', fontSize: '15px' }}>
                       CARB CYCLING
                     </div>
                     Higher carbs ({results.training.carbs}g) on training days. Reduce to {results.rest.carbs}g on rest days. Matches energy demands.
                   </div>
-                  <div>
-                    <div style={{ color: colors.primary, fontWeight: 'bold', marginBottom: '8px', fontSize: '16px' }}>
+                  <div style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
+                    <div style={{ color: colors.primary, fontWeight: 'bold', marginBottom: '8px', fontSize: '15px' }}>
                       TIMING MATTERS
                     </div>
                     Pre-workout: simple carbs. Post-workout (30min): protein + carbs for recovery. Events: eat strategic meal before arriving.
                   </div>
-                  <div>
-                    <div style={{ color: colors.primary, fontWeight: 'bold', marginBottom: '8px', fontSize: '16px' }}>
+                  <div style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
+                    <div style={{ color: colors.primary, fontWeight: 'bold', marginBottom: '8px', fontSize: '15px' }}>
                       STAY STRONG
                     </div>
                     Maintain strength training 2x/week minimum. Weight room work = race speed. Critical during off-season.
@@ -1251,25 +1280,30 @@ export default function HolidayNutritionPlanner() {
               {/* Gender-Specific Notes */}
               <div style={{
                 background: `linear-gradient(135deg, ${colors.teal}20 0%, ${colors.teal}10 100%)`,
-                padding: '24px',
+                padding: '20px',
                 borderRadius: '12px',
                 border: `2px solid ${colors.teal}60`,
-                marginBottom: '24px'
+                marginBottom: '24px',
+                width: '100%',
+                boxSizing: 'border-box'
               }}>
                 <h3 style={{
-                  fontSize: '20px',
+                  fontSize: '18px',
                   color: 'black',
                   marginBottom: '12px',
                   fontFamily: 'Inter, sans-serif',
-                  fontWeight: '700'
+                  fontWeight: '700',
+                  wordWrap: 'break-word'
                 }}>
                   {formData.gender === 'male' ? 'Male Athlete Considerations' : 'Female Athlete Considerations'}
                 </h3>
                 <div style={{
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: '15px',
+                  fontSize: '14px',
                   color: 'black',
-                  lineHeight: '1.7'
+                  lineHeight: '1.7',
+                  wordWrap: 'break-word',
+                  overflowWrap: 'break-word'
                 }}>
                   {formData.gender === 'male' ? (
                     <>
@@ -1293,24 +1327,29 @@ export default function HolidayNutritionPlanner() {
               {/* Action Steps */}
               <div style={{
                 background: `linear-gradient(135deg, ${colors.primary}20 0%, ${colors.primary}10 100%)`,
-                padding: '32px',
+                padding: '20px',
                 borderRadius: '12px',
                 border: `2px solid ${colors.primary}`,
-                marginBottom: '24px'
+                marginBottom: '24px',
+                width: '100%',
+                boxSizing: 'border-box'
               }}>
                 <h2 style={{
-                  fontSize: '28px',
+                  fontSize: '24px',
                   color: 'black',
                   marginBottom: '20px',
-                  letterSpacing: '1px'
+                  letterSpacing: '1px',
+                  wordWrap: 'break-word'
                 }}>
                   NEXT STEPS
                 </h2>
                 <div style={{
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: '16px',
+                  fontSize: '15px',
                   color: 'black',
-                  lineHeight: '1.8'
+                  lineHeight: '1.8',
+                  wordWrap: 'break-word',
+                  overflowWrap: 'break-word'
                 }}>
                   <div style={{ marginBottom: '12px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                     <span style={{ color: colors.primary, fontWeight: 'bold', fontSize: '20px' }}>1.</span>
@@ -1334,27 +1373,32 @@ export default function HolidayNutritionPlanner() {
               {/* CTA */}
               <div style={{
                 textAlign: 'center',
-                padding: '32px',
+                padding: '24px 20px',
                 background: colors.primary,
                 borderRadius: '12px',
-                boxShadow: `0 8px 24px ${colors.primary}40`
+                boxShadow: `0 8px 24px ${colors.primary}40`,
+                width: '100%',
+                boxSizing: 'border-box'
               }}>
                 <div style={{
-                  fontSize: '24px',
+                  fontSize: '22px',
                   fontWeight: 'bold',
                   color: 'white',
                   marginBottom: '12px',
-                  letterSpacing: '1px'
+                  letterSpacing: '1px',
+                  wordWrap: 'break-word'
                 }}>
                   WANT MORE PERSONALIZED GUIDANCE?
                 </div>
                 <div style={{
-                  fontSize: '16px',
+                  fontSize: '15px',
                   fontFamily: 'Inter, sans-serif',
                   color: 'white',
                   opacity: 0.95,
                   marginBottom: '20px',
-                  lineHeight: '1.8'
+                  lineHeight: '1.8',
+                  wordWrap: 'break-word',
+                  overflowWrap: 'break-word'
                 }}>
                   <div style={{ marginBottom: '16px' }}>
                     At Keystone Endurance, nutrition isn't a standalone plan—it's integrated into everything we do.
