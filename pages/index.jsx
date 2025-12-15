@@ -116,10 +116,12 @@ export default function HolidayNutritionPlanner() {
   const nextStep = () => {
     if (step < 4) setStep(step + 1);
     if (step === 3) calculateNutrition();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const prevStep = () => {
     if (step > 1) setStep(step - 1);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // Keystone Endurance logo as base64 embedded image
@@ -1474,7 +1476,8 @@ export default function HolidayNutritionPlanner() {
                   currentWeight: '', height: '', targetWeight: '', holidayEvents: '', 
                   trainingDays: [] 
                 }); 
-                setResults(null); 
+                setResults(null);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               style={{
                 width: '100%',
