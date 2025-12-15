@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 export default function HolidayNutritionPlanner() {
   const [step, setStep] = useState(1);
@@ -754,8 +756,8 @@ export default function HolidayNutritionPlanner() {
                 disabled={!formData.weeklyHours || formData.trainingDays.length === 0 || !formData.holidayEvents}
                 style={{
                   flex: 2,
-                  padding: '18px',
-                  fontSize: '22px',
+                  padding: '16px 12px',
+                  fontSize: '18px',
                   fontWeight: 'bold',
                   background: formData.weeklyHours && formData.trainingDays.length > 0 && formData.holidayEvents
                     ? colors.primary
@@ -768,7 +770,9 @@ export default function HolidayNutritionPlanner() {
                   boxShadow: formData.weeklyHours && formData.trainingDays.length > 0 && formData.holidayEvents
                     ? `0 6px 20px ${colors.primary}60`
                     : 'none',
-                  letterSpacing: '1px'
+                  letterSpacing: '0.5px',
+                  width: '100%',
+                  boxSizing: 'border-box'
                 }}
               >
                 CONTINUE →
@@ -1432,17 +1436,21 @@ export default function HolidayNutritionPlanner() {
                   href="mailto:coach@keystoneendurance.com"
                   style={{
                     display: 'inline-block',
-                    padding: '16px 36px',
+                    padding: '14px 20px',
                     background: 'white',
                     color: colors.primary,
                     fontWeight: 'bold',
-                    fontSize: '18px',
+                    fontSize: '14px',
                     borderRadius: '8px',
                     cursor: 'pointer',
                     boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                    letterSpacing: '1px',
+                    letterSpacing: '0.5px',
                     textDecoration: 'none',
-                    transition: 'transform 0.2s'
+                    transition: 'transform 0.2s',
+                    wordWrap: 'break-word',
+                    maxWidth: '100%',
+                    boxSizing: 'border-box',
+                    textAlign: 'center'
                   }}
                   onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
                   onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
@@ -1507,6 +1515,8 @@ export default function HolidayNutritionPlanner() {
           </div>
         </div>
       </div>
+      <Analytics />
+      <SpeedInsights />
     </div>
   );
 }
