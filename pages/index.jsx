@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/react';
 
 export default function HolidayNutritionPlanner() {
   const [step, setStep] = useState(1);
@@ -567,8 +565,8 @@ export default function HolidayNutritionPlanner() {
               style={{
                 marginTop: '36px',
                 width: '100%',
-                padding: '18px',
-                fontSize: '22px',
+                padding: '16px',
+                fontSize: '18px',
                 fontWeight: 'bold',
                 background: formData.gender && formData.age && formData.sport && formData.currentWeight && formData.height
                   ? colors.primary
@@ -581,7 +579,9 @@ export default function HolidayNutritionPlanner() {
                 boxShadow: formData.gender && formData.age && formData.sport && formData.currentWeight && formData.height
                   ? `0 6px 20px ${colors.primary}60`
                   : 'none',
-                letterSpacing: '1px'
+                letterSpacing: '0.5px',
+                whiteSpace: 'nowrap',
+                boxSizing: 'border-box'
               }}
             >
               CONTINUE →
@@ -732,13 +732,13 @@ export default function HolidayNutritionPlanner() {
               </div>
             </div>
 
-            <div style={{ marginTop: '36px', display: 'flex', gap: '12px' }}>
+            <div style={{ marginTop: '36px', display: 'flex', gap: '12px', width: '100%', boxSizing: 'border-box' }}>
               <button
                 onClick={prevStep}
                 style={{
                   flex: 1,
-                  padding: '18px',
-                  fontSize: '20px',
+                  padding: '16px 8px',
+                  fontSize: '16px',
                   fontWeight: 'bold',
                   background: 'white',
                   color: colors.steel,
@@ -746,7 +746,9 @@ export default function HolidayNutritionPlanner() {
                   borderRadius: '12px',
                   cursor: 'pointer',
                   transition: 'all 0.2s',
-                  letterSpacing: '1px'
+                  letterSpacing: '0.5px',
+                  whiteSpace: 'nowrap',
+                  boxSizing: 'border-box'
                 }}
               >
                 ← BACK
@@ -756,8 +758,8 @@ export default function HolidayNutritionPlanner() {
                 disabled={!formData.weeklyHours || formData.trainingDays.length === 0 || !formData.holidayEvents}
                 style={{
                   flex: 2,
-                  padding: '16px 12px',
-                  fontSize: '18px',
+                  padding: '16px 8px',
+                  fontSize: '16px',
                   fontWeight: 'bold',
                   background: formData.weeklyHours && formData.trainingDays.length > 0 && formData.holidayEvents
                     ? colors.primary
@@ -771,7 +773,7 @@ export default function HolidayNutritionPlanner() {
                     ? `0 6px 20px ${colors.primary}60`
                     : 'none',
                   letterSpacing: '0.5px',
-                  width: '100%',
+                  whiteSpace: 'nowrap',
                   boxSizing: 'border-box'
                 }}
               >
@@ -905,13 +907,13 @@ export default function HolidayNutritionPlanner() {
               </div>
             </div>
 
-            <div style={{ marginTop: '36px', display: 'flex', gap: '12px' }}>
+            <div style={{ marginTop: '36px', display: 'flex', gap: '12px', width: '100%', boxSizing: 'border-box' }}>
               <button
                 onClick={prevStep}
                 style={{
                   flex: 1,
-                  padding: '18px',
-                  fontSize: '20px',
+                  padding: '16px 8px',
+                  fontSize: '16px',
                   fontWeight: 'bold',
                   background: 'white',
                   color: colors.steel,
@@ -919,7 +921,9 @@ export default function HolidayNutritionPlanner() {
                   borderRadius: '12px',
                   cursor: 'pointer',
                   transition: 'all 0.2s',
-                  letterSpacing: '1px'
+                  letterSpacing: '0.5px',
+                  whiteSpace: 'nowrap',
+                  boxSizing: 'border-box'
                 }}
               >
                 ← BACK
@@ -929,8 +933,8 @@ export default function HolidayNutritionPlanner() {
                 disabled={!formData.goal}
                 style={{
                   flex: 2,
-                  padding: '18px',
-                  fontSize: '22px',
+                  padding: '16px 8px',
+                  fontSize: '16px',
                   fontWeight: 'bold',
                   background: formData.goal ? colors.primary : '#cccccc',
                   color: 'white',
@@ -939,7 +943,9 @@ export default function HolidayNutritionPlanner() {
                   cursor: formData.goal ? 'pointer' : 'not-allowed',
                   transition: 'all 0.2s',
                   boxShadow: formData.goal ? `0 6px 20px ${colors.primary}60` : 'none',
-                  letterSpacing: '1px'
+                  letterSpacing: '0.5px',
+                  whiteSpace: 'nowrap',
+                  boxSizing: 'border-box'
                 }}
               >
                 GET MY PLAN →
@@ -1515,8 +1521,6 @@ export default function HolidayNutritionPlanner() {
           </div>
         </div>
       </div>
-      <Analytics />
-      <SpeedInsights />
     </div>
   );
 }
