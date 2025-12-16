@@ -1510,29 +1510,30 @@ export default function HolidayNutritionPlanner() {
                     href="mailto:coach@keystoneendurance.com"
                     style={{
                       display: 'inline-block',
-                      padding: '14px 20px',
+                      padding: '12px 16px',
                       background: 'white',
                       color: colors.primary,
                       fontWeight: 'bold',
-                      fontSize: '14px',
+                      fontSize: '13px',
                       borderRadius: '8px',
                       cursor: 'pointer',
                       boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                      letterSpacing: '0.5px',
+                      letterSpacing: '0.3px',
                       textDecoration: 'none',
                       transition: 'transform 0.2s',
-                      wordWrap: 'break-word',
-                      maxWidth: '100%',
+                      maxWidth: '95%',
                       boxSizing: 'border-box',
-                      textAlign: 'center'
+                      textAlign: 'center',
+                      lineHeight: '1.4'
                     }}
                     onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
                     onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
                   >
-                    EMAIL US: coach@keystoneendurance.com
-                </a>
+                    <div style={{ fontSize: '12px', marginBottom: '2px' }}>EMAIL US:</div>
+                    <div style={{ fontSize: '11px', letterSpacing: '0px' }}>COACH@KEYSTONEENDURANCE.COM</div>
+                  </a>
+                </div>
               </div>
-            </div>
 
             <button
               onClick={() => { 
