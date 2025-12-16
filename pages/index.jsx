@@ -960,7 +960,14 @@ export default function HolidayNutritionPlanner() {
           </div>
         )}
 
-        {step === 4 && results && (
+        {step === 4 && results && (() => {
+          // Helper function to format sport name
+          const formatSportName = (sport) => {
+            const sportName = sport.split('(')[0].trim();
+            return sportName.charAt(0).toUpperCase() + sportName.slice(1).toLowerCase();
+          };
+          
+          return (
           <div className="card-enter" style={{ width: '100%', maxWidth: '100%' }}>
             <div style={{
               background: 'white',
@@ -990,7 +997,7 @@ export default function HolidayNutritionPlanner() {
                   fontFamily: 'Inter, sans-serif',
                   fontWeight: '500'
                 }}>
-                  Optimized for {formData.gender === 'male' ? 'Male' : 'Female'} Triathletes and Distance Runners | <span style={{ color: colors.primary, fontWeight: '700' }}>{formData.sport.split('(')[0].trim().charAt(0).toUpperCase() + formData.sport.split('(')[0].trim().slice(1).toLowerCase()}</span>
+                  Optimized for {formData.gender === 'male' ? 'Male' : 'Female'} Triathletes and Distance Runners | <span style={{ color: colors.primary, fontWeight: '700' }}>{formatSportName(formData.sport)}</span>
                 </p>
                 <p style={{
                   fontSize: '15px',
@@ -1506,7 +1513,8 @@ export default function HolidayNutritionPlanner() {
               START OVER
             </button>
           </div>
-        )}
+          );
+        })()}
       </div>
 
       {/* Footer */}
