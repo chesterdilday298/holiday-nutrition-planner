@@ -1513,6 +1513,7 @@ export default function HolidayNutritionPlanner() {
               START OVER
             </button>
           </div>
+        </div>
           );
         })()}
       </div>
@@ -1544,3 +1545,5 @@ export default function HolidayNutritionPlanner() {
     </div>
   );
 }
+
+    
