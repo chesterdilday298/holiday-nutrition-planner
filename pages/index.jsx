@@ -1,4 +1,4 @@
-    import React, { useState } from 'react';
+import React, { useState } from 'react';
 
 export default function HolidayNutritionPlanner() {
   const [step, setStep] = useState(1);
@@ -268,6 +268,20 @@ export default function HolidayNutritionPlanner() {
           /* Strategy cards on mobile stack */
           [style*="gridTemplateColumns"] {
             grid-template-columns: 1fr !important;
+          }
+
+          /* Force result cards to single column on mobile */
+          [style*="minmax(250px"] {
+            grid-template-columns: 1fr !important;
+          }
+
+          [style*="minmax(200px"] {
+            grid-template-columns: 1fr !important;
+          }
+
+          .result-card {
+            max-width: 100% !important;
+            margin: 0 !important;
           }
 
           /* Buttons on mobile */
@@ -1002,16 +1016,17 @@ export default function HolidayNutritionPlanner() {
           };
           
           return (
-          <div className="card-enter" style={{ width: '100%', maxWidth: '100%' }}>
+          <div className="card-enter" style={{ width: '100%', maxWidth: '100%', padding: '0', margin: '0' }}>
             <div style={{
               background: 'white',
               borderRadius: '16px',
-              padding: '24px',
+              padding: '16px',
               marginBottom: '24px',
               boxShadow: '0 20px 60px rgba(0,0,0,0.4)',
               border: `3px solid ${colors.teal}`,
               width: '100%',
-              boxSizing: 'border-box'
+              boxSizing: 'border-box',
+              maxWidth: '100%'
             }}>
               <div style={{
                 textAlign: 'center',
@@ -1081,8 +1096,8 @@ export default function HolidayNutritionPlanner() {
 
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-                gap: '16px',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                gap: '12px',
                 marginBottom: '36px',
                 maxWidth: '100%',
                 width: '100%',
