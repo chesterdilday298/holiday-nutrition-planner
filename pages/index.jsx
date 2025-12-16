@@ -990,7 +990,7 @@ export default function HolidayNutritionPlanner() {
                   fontFamily: 'Inter, sans-serif',
                   fontWeight: '500'
                 }}>
-                  Optimized for {formData.gender === 'male' ? 'Male' : 'Female'} Triathletes and Distance Runners | {formData.sport}
+                  Optimized for {formData.gender === 'male' ? 'Male' : 'Female'} Triathletes and Distance Runners | <span style={{ color: colors.primary, textTransform: 'uppercase', fontWeight: '700' }}>{formData.sport}</span>
                 </p>
                 <p style={{
                   fontSize: '15px',
@@ -1253,7 +1253,8 @@ export default function HolidayNutritionPlanner() {
                   color: colors.primary,
                   marginBottom: '20px',
                   letterSpacing: '1px',
-                  wordWrap: 'break-word'
+                  wordWrap: 'break-word',
+                  textAlign: 'center'
                 }}>
                   YOUR DECEMBER STRATEGY
                 </h2>
@@ -1388,7 +1389,6 @@ export default function HolidayNutritionPlanner() {
 
               {/* CTA */}
               <div style={{
-                textAlign: 'center',
                 padding: '24px 20px',
                 background: colors.primary,
                 borderRadius: '12px',
@@ -1402,7 +1402,8 @@ export default function HolidayNutritionPlanner() {
                   color: 'white',
                   marginBottom: '12px',
                   letterSpacing: '1px',
-                  wordWrap: 'break-word'
+                  wordWrap: 'break-word',
+                  textAlign: 'center'
                 }}>
                   WANT MORE PERSONALIZED GUIDANCE?
                 </div>
@@ -1414,7 +1415,8 @@ export default function HolidayNutritionPlanner() {
                   marginBottom: '20px',
                   lineHeight: '1.8',
                   wordWrap: 'break-word',
-                  overflowWrap: 'break-word'
+                  overflowWrap: 'break-word',
+                  textAlign: 'left'
                 }}>
                   <div style={{ marginBottom: '16px' }}>
                     At Keystone Endurance, nutrition isn't a standalone plan—it's integrated into everything we do.
@@ -1425,49 +1427,50 @@ export default function HolidayNutritionPlanner() {
                   <div style={{ marginBottom: '16px' }}>
                     But here's what makes us different: We offer complete 1-to-1 Coaching that goes beyond just nutrition or just training. You get:
                   </div>
-                  <div style={{ marginBottom: '8px', paddingLeft: '20px' }}>
+                  <div style={{ marginBottom: '8px', paddingLeft: '20px', textAlign: 'left' }}>
                     ✅ Custom training programs (swim, bike, run, strength)
                   </div>
-                  <div style={{ marginBottom: '8px', paddingLeft: '20px' }}>
+                  <div style={{ marginBottom: '8px', paddingLeft: '20px', textAlign: 'left' }}>
                     ✅ Personalized nutrition coaching synced to your training phases
                   </div>
-                  <div style={{ marginBottom: '8px', paddingLeft: '20px' }}>
+                  <div style={{ marginBottom: '8px', paddingLeft: '20px', textAlign: 'left' }}>
                     ✅ Ongoing performance analysis and threshold testing
                   </div>
-                  <div style={{ marginBottom: '8px', paddingLeft: '20px' }}>
+                  <div style={{ marginBottom: '8px', paddingLeft: '20px', textAlign: 'left' }}>
                     ✅ Unlimited coach communication and bi-weekly calls
                   </div>
-                  <div style={{ marginBottom: '16px', paddingLeft: '20px' }}>
+                  <div style={{ marginBottom: '16px', paddingLeft: '20px', textAlign: 'left' }}>
                     ✅ Access to the Keystone Krew Community for support and accountability
                   </div>
-                  <div>
+                  <div style={{ textAlign: 'left' }}>
                     This is comprehensive, performance-focused coaching designed around YOU.
                   </div>
                 </div>
-                <a 
-                  href="mailto:coach@keystoneendurance.com"
-                  style={{
-                    display: 'inline-block',
-                    padding: '14px 20px',
-                    background: 'white',
-                    color: colors.primary,
-                    fontWeight: 'bold',
-                    fontSize: '14px',
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                    letterSpacing: '0.5px',
-                    textDecoration: 'none',
-                    transition: 'transform 0.2s',
-                    wordWrap: 'break-word',
-                    maxWidth: '100%',
-                    boxSizing: 'border-box',
-                    textAlign: 'center'
-                  }}
-                  onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
-                  onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
-                >
-                  EMAIL US: coach@keystoneendurance.com
+                <div style={{ textAlign: 'center' }}>
+                  <a 
+                    href="mailto:coach@keystoneendurance.com"
+                    style={{
+                      display: 'inline-block',
+                      padding: '14px 20px',
+                      background: 'white',
+                      color: colors.primary,
+                      fontWeight: 'bold',
+                      fontSize: '14px',
+                      borderRadius: '8px',
+                      cursor: 'pointer',
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+                      letterSpacing: '0.5px',
+                      textDecoration: 'none',
+                      transition: 'transform 0.2s',
+                      wordWrap: 'break-word',
+                      maxWidth: '100%',
+                      boxSizing: 'border-box',
+                      textAlign: 'center'
+                    }}
+                    onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
+                    onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
+                  >
+                    EMAIL US: coach@keystoneendurance.com
                 </a>
               </div>
             </div>
