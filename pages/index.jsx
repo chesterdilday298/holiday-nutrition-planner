@@ -990,7 +990,7 @@ export default function HolidayNutritionPlanner() {
                   fontFamily: 'Inter, sans-serif',
                   fontWeight: '500'
                 }}>
-                  Optimized for {formData.gender === 'male' ? 'Male' : 'Female'} Triathletes and Distance Runners | <span style={{ color: colors.primary, textTransform: 'uppercase', fontWeight: '700' }}>{formData.sport}</span>
+                  Optimized for {formData.gender === 'male' ? 'Male' : 'Female'} Triathletes and Distance Runners | <span style={{ color: colors.primary, fontWeight: '700' }}>{formData.sport.split('(')[0].trim().charAt(0).toUpperCase() + formData.sport.split('(')[0].trim().slice(1).toLowerCase()}</span>
                 </p>
                 <p style={{
                   fontSize: '15px',
