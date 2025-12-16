@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+    import React, { useState } from 'react';
 
 export default function HolidayNutritionPlanner() {
   const [step, setStep] = useState(1);
@@ -233,27 +233,29 @@ export default function HolidayNutritionPlanner() {
           box-sizing: border-box;
         }
 
+        body {
+          overflow-x: hidden;
+          max-width: 100vw;
+        }
+
         @media (max-width: 768px) {
-          body {
-            overflow-x: hidden;
-          }
-          
           .result-card {
-            padding: 16px !important;
+            padding: 12px !important;
+            margin: 0 !important;
           }
           
           h1 {
-            font-size: 36px !important;
+            font-size: 32px !important;
             word-wrap: break-word;
           }
           
           h2 {
-            font-size: 24px !important;
+            font-size: 20px !important;
             word-wrap: break-word;
           }
 
           h3 {
-            font-size: 18px !important;
+            font-size: 16px !important;
           }
 
           /* Force all text to wrap */
@@ -267,15 +269,47 @@ export default function HolidayNutritionPlanner() {
           [style*="gridTemplateColumns"] {
             grid-template-columns: 1fr !important;
           }
+
+          /* Buttons on mobile */
+          button {
+            font-size: 14px !important;
+            padding: 12px 6px !important;
+            max-width: 100% !important;
+            letter-spacing: 0.3px !important;
+          }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 400px) {
           h1 {
-            font-size: 28px !important;
+            font-size: 26px !important;
           }
 
           h2 {
-            font-size: 22px !important;
+            font-size: 18px !important;
+          }
+
+          /* Extra small buttons for older/smaller iPhones */
+          button {
+            font-size: 12px !important;
+            padding: 10px 4px !important;
+            letter-spacing: 0.2px !important;
+          }
+
+          .result-card {
+            padding: 10px !important;
+          }
+        }
+
+        @media (max-width: 375px) {
+          /* iPhone SE and smaller */
+          button {
+            font-size: 11px !important;
+            padding: 8px 3px !important;
+            letter-spacing: 0px !important;
+          }
+
+          h1 {
+            font-size: 24px !important;
           }
         }
       `}</style>
@@ -1049,7 +1083,10 @@ export default function HolidayNutritionPlanner() {
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
                 gap: '16px',
-                marginBottom: '36px'
+                marginBottom: '36px',
+                maxWidth: '100%',
+                width: '100%',
+                boxSizing: 'border-box'
               }}>
                 {/* Training Day Card */}
                 <div className="result-card" style={{
